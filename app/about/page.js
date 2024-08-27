@@ -10,10 +10,18 @@ export const metadata = {
 export default function About() {
   return (
     <>
+      <Navbar about="bg-gray-900" />
       <main className="flex min-h-screen flex-col items-center justify-between py-0">
         <section className="bg-gray-50 dark:bg-gray-900">
           <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
             <div className="flex flex-col justify-center">
+              <Image
+                className="w-80 mx-auto"
+                src="../logo.svg"
+                alt="Your Company"
+                width={25}
+                height={25}
+              />
               <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
                 Join Us at The Lodge
               </h1>

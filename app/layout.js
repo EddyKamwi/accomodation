@@ -1,16 +1,24 @@
-"use Client"
-import { Inter } from "next/font/google";
 import "./globals.css";
-import { Footer, Navbar } from "@/components";
+import { Footer } from "@/components";
 
-const inter = Inter({ subsets: ["latin"] });
+export const metadata = {
+  title: "Welcome | Lodges",
+  description: "This is a lodge",
+  author: "Qualis Designers",
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <head>
+        <link
+          rel="shortcut icon"
+          href="../public/logo.svg"
+          type="image/x-icon"
+        />
+      </head>
+      <body>
         {/* Nav tabs */}
-        <Navbar />
         {children}
         <Footer></Footer>
       </body>

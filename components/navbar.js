@@ -1,6 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 
-const Navbar = () => {
+const Navbar = ({ home = "", about = "", rooms = "", map = "" }) => {
   return (
     <nav className="bg-gray-800">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -52,49 +53,45 @@ const Navbar = () => {
               </svg>
             </button>
           </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex flex-shrink-0 items-center">
+          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
+            <div className="flex max-sm:mr-0 mr-auto">
               <Image
-                className="h-8 w-auto"
-                src="../mark.svg"
+                className="h-16 w-auto items-center"
+                src="../logo.svg"
                 alt="Your Company"
                 width={25}
                 height={25}
               ></Image>
             </div>
             <div className="hidden sm:ml-6 sm:block">
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 max-2xl:mt-3">
                 {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
 
-                <a
+                <Link
                   href="/"
-                  id="home"
-                  className="rounded-md  px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  className={`rounded-md  px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white ${home}`}
                   aria-current=""
                 >
                   Home
-                </a>
-                <a
-                  id="rooms"
+                </Link>
+                <Link
                   href="rooms"
-                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  className={`rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white ${rooms}`}
                 >
                   Rooms
-                </a>
-                <a
-                  id="about"
+                </Link>
+                <Link
                   href="/about"
-                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  className={`rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white ${about}`}
                 >
                   About
-                </a>
-                <a
-                  id="google"
+                </Link>
+                <Link
                   href="/googlemap"
-                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  className={`rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white ${map}`}
                 >
                   Google Map
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -114,26 +111,25 @@ const Navbar = () => {
 
           <a
             href="/"
-            className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-            aria-current="page"
+            className={`block rounded-md px-3 py-2 text-base font-medium text-white ${home}`}
           >
             Home
           </a>
           <a
             href="/rooms"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+            className={`block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white ${rooms}`}
           >
             Rooms
           </a>
           <a
             href="/about"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+            className={`block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white ${about}`}
           >
             About
           </a>
           <a
             href="/googlemap"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+            className={`block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white ${map}`}
           >
             Google Map
           </a>

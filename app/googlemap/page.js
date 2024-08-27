@@ -1,8 +1,14 @@
-"use client";
-import { Learn } from "@/components";
+import { Navbar } from "@/components";
+export const metadata = {
+  title: "Google Map | Lodges",
+  description: "This is a lodge",
+  author: "Qualis Designers",
+};
 
 export default function Googlemap() {
   return (
+    <>
+    <Navbar map="bg-gray-900" />
     <main className="flex min-h-screen flex-col items-center justify-between">
       <iframe
         className="map w-full"
@@ -11,6 +17,6 @@ export default function Googlemap() {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
-    </main>
+    </main></>
   );
 }
