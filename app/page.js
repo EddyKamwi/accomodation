@@ -26,7 +26,7 @@ export default function Home() {
             <div className="flex-row space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
               <Link
                 href="/rooms"
-                className="bg-blue-700 p-1 m-2 inline-flex text-sm rounded-xl h-7 hover:bg-blue-900"
+                className="bg-blue-700 p-1 m-2 inline-flex text-sm rounded-xl h-7 hover:bg-blue-900 text-white"
               >
                 Our Rooms
                 <svg
@@ -47,7 +47,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/googlemap"
-                className="bg-blue-700 p-1 m-2 inline-flex text-sm rounded-xl h-7 hover:bg-blue-900"
+                className="bg-blue-700 p-1 m-2 inline-flex text-sm rounded-xl h-7 hover:bg-blue-900 text-white"
               >
                 Google Map
                 <svg
