@@ -17,7 +17,7 @@ export default function About() {
             <div className="flex flex-col justify-center">
               <Image
                 className="w-80 mx-auto"
-                src="./logo.svg"
+                src="../public/logo.svg"
                 alt="Your Company"
                 width={25}
                 height={25}
