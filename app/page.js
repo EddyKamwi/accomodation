@@ -14,21 +14,42 @@ export default function Home() {
       <Navbar home="bg-gray-900" />
       <main className="flex min-h-screen flex-col items-center justify-between">
         {/* hero section */}
-        <section className="bg-center bg-no-repeat bg-gray-700 bg-blend-multiply bg-image-hero">
+        <section className="bg-center bg-no-repeat bg-gray-700 bg-blend-multiply bg-image-hero w-screen">
           <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-            <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
-              Find Your Perfect Sanctuary
+            <h1 className="mb-4 text-4xl font-bold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+              Find Your Perfect Sanctuary In <br/><span className="text-xl font-light">10min Drive From KK Airport</span>
             </h1>
             <p className="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
               Welcome to your serene escape. Relax, unwind, and experience true
               comfort and tranquility.
             </p>
-            <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+            <div className="flex-row space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
               <Link
                 href="/rooms"
-                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+                className="bg-blue-700 p-1 m-2 inline-flex text-sm rounded-xl h-7 hover:bg-blue-900"
               >
                 Our Rooms
+                <svg
+                  className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                  />
+                </svg>
+              </Link>
+              <Link
+                href="/googlemap"
+                className="bg-blue-700 p-1 m-2 inline-flex text-sm rounded-xl h-7 hover:bg-blue-900"
+              >
+                Google Map
                 <svg
                   className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
                   aria-hidden="true"
@@ -53,7 +74,7 @@ export default function Home() {
         <section className="bg-white dark:bg-gray-900">
           <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
             <div className="bg-kitchen dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
-              <h1 className="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">
+              <h1 className="text-white dark:text-white text-3xl md:text-5xl font-extrabold mb-2">
                 The Lodge Kitchen
               </h1>
               <p
@@ -111,12 +132,12 @@ export default function Home() {
             </div>
             <div className="grid md:grid-cols-2 gap-3 bg-transparent">
               <div className="bg-carpark border border-gray-200 rounded-lg p-8 md:p-12">
-                <h2 className="mb-96 text-gray-900 dark:text-white text-3xl font-extrabold">
+                <h2 className="mb-96 text-white dark:text-white text-3xl font-extrabold">
                   ParkZone: Your Vehicle’s Safe Zone
                 </h2>
               </div>
               <div className="bg-bar dark:bg-gray-800 border border-gray-200 rounded-lg p-8 md:p-12">
-                <h2 className="mb-96 text-gray-900 dark:text-white text-3xl font-extrabold">
+                <h2 className="mb-96 text-white dark:text-white text-3xl font-extrabold">
                   The Sipping Room
                 </h2>
               </div>

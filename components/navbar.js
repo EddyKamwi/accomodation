@@ -1,7 +1,13 @@
+"use client"
+const Logo = "./logo.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 const Navbar = ({ home = "", about = "", rooms = "", map = "" }) => {
+  const [menu, setMenu]= useState(true)
+  const ToggleMenu =()=>{setMenu((prev)=>!prev)}
+
   return (
     <nav className="bg-gray-800">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -10,6 +16,7 @@ const Navbar = ({ home = "", about = "", rooms = "", map = "" }) => {
             {/* Mobile menu button */}
 
             <button
+            onClick={ToggleMenu}
               type="button"
               className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-controls="mobile-menu"
@@ -57,7 +64,7 @@ const Navbar = ({ home = "", about = "", rooms = "", map = "" }) => {
             <div className="flex max-sm:mr-0 mr-auto">
               <Image
                 className="h-16 w-auto items-center"
-                src="../logo.svg"
+                src={Logo}
                 alt="Your Company"
                 width={25}
                 height={25}
@@ -75,7 +82,7 @@ const Navbar = ({ home = "", about = "", rooms = "", map = "" }) => {
                   Home
                 </Link>
                 <Link
-                  href="rooms"
+                  href="/rooms"
                   className={`rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white ${rooms}`}
                 >
                   Rooms
@@ -105,7 +112,7 @@ const Navbar = ({ home = "", about = "", rooms = "", map = "" }) => {
 
       {/* Mobile menu, show/hide based on menu state. */}
 
-      <div className="sm:hidden" id="mobile-menu">
+      <div className={`sm:hidden ${menu && 'hidden'}`} id="mobile-menu">
         <div className="space-y-1 px-2 pb-3 pt-2">
           {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
 

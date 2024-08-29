@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
           type="image/x-icon"
         />
       </head>
-      <body>
+      <body className="bg-gray-900 min-h-screen">
         {/* Nav tabs */}
         {children}
         <Footer></Footer>
