@@ -1,13 +1,14 @@
-"use client"
+"use client";
 const Logo = "./logo.svg";
 import Image from "next/image";
 import Link from "next/link";
-import NavLink from "@/templates/vendor/laravel/breeze/stubs/inertia-react/resources/js/Components/NavLink";
 import { useState } from "react";
 
 const Navbar = ({ home = "", about = "", rooms = "", map = "" }) => {
-  const [menu, setMenu]= useState(true)
-  const ToggleMenu =()=>{setMenu((prev)=>!prev)}
+  const [menu, setMenu] = useState(true);
+  const ToggleMenu = () => {
+    setMenu((prev) => !prev);
+  };
 
   return (
     <nav className="bg-gray-800">
@@ -17,7 +18,7 @@ const Navbar = ({ home = "", about = "", rooms = "", map = "" }) => {
             {/* Mobile menu button */}
 
             <button
-            onClick={ToggleMenu}
+              onClick={ToggleMenu}
               type="button"
               className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-controls="mobile-menu"
@@ -75,31 +76,31 @@ const Navbar = ({ home = "", about = "", rooms = "", map = "" }) => {
               <div className="flex space-x-4 max-2xl:mt-3">
                 {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
 
-                <NavLink
+                <Link
                   href="/"
                   className={`rounded-md  px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white ${home}`}
                   aria-current=""
                 >
                   Home
-                </NavLink>
-                <NavLink
+                </Link>
+                <Link
                   href="/rooms"
                   className={`rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white ${rooms}`}
                 >
                   Rooms
-                </NavLink>
-                <NavLink
+                </Link>
+                <Link
                   href="/about"
                   className={`rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white ${about}`}
                 >
                   About
-                </NavLink>
-                <NavLink
+                </Link>
+                <Link
                   href="/googlemap"
                   className={`rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white ${map}`}
                 >
                   Google Map
-                </NavLink>
+                </Link>
               </div>
             </div>
           </div>
@@ -113,34 +114,34 @@ const Navbar = ({ home = "", about = "", rooms = "", map = "" }) => {
 
       {/* Mobile menu, show/hide based on menu state. */}
 
-      <div className={`sm:hidden ${menu && 'hidden'}`} id="mobile-menu">
+      <div className={`sm:hidden ${menu && "hidden"}`} id="mobile-menu">
         <div className="space-y-1 px-2 pb-3 pt-2">
           {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
 
-          <NavLink
+          <Link
             href="/"
             className={`block rounded-md px-3 py-2 text-base font-medium text-white ${home}`}
           >
             Home
-          </NavLink>
-          <NavLink
+          </Link>
+          <Link
             href="/rooms"
             className={`block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white ${rooms}`}
           >
             Rooms
-          </NavLink>
-          <NavLink
+          </Link>
+          <Link
             href="/about"
             className={`block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white ${about}`}
           >
             About
-          </NavLink>
-          <NavLink
+          </Link>
+          <Link
             href="/googlemap"
             className={`block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white ${map}`}
           >
             Google Map
-          </NavLink>
+          </Link>
         </div>
       </div>
     </nav>
