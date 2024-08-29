@@ -3,12 +3,28 @@ import Link from "next/link";
 import { Navbar } from "@/components";
 import React, { useState } from "react";
 
+
 export default function Home() {
   const [display, setDisplay] = useState(true);
   const ToggleDisplay = () => {
     setDisplay((display) => !display);
   };
-
+  (function (l) {
+    if (l.search[1] === "/") {
+      var decoded = l.search
+        .slice(1)
+        .split("&")
+        .map(function (s) {
+          return s.replace(/~and~/g, "&");
+        })
+        .join("?");
+      window.history.replaceState(
+        null,
+        null,
+        l.pathname.slice(0, -1) + decoded + l.hash
+      );
+    }
+  })(window.location);
   return (
     <>
       <Navbar home="bg-gray-900" />
@@ -17,7 +33,10 @@ export default function Home() {
         <section className="bg-center bg-no-repeat bg-gray-700 bg-blend-multiply bg-image-hero w-screen">
           <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
             <h1 className="mb-4 text-4xl font-bold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
-              Find Your Perfect Sanctuary In <br/><span className="text-xl font-light">10min Drive From KK Airport</span>
+              Find Your Perfect Sanctuary In <br />
+              <span className="text-xl font-light">
+                10min Drive From KK Airport
+              </span>
             </h1>
             <p className="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
               Welcome to your serene escape. Relax, unwind, and experience true
