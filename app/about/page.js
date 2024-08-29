@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Navbar } from "@/components";
+const Logo = "./logo.svg";
 
 export const metadata = {
   title: "About | Lodges",
@@ -17,7 +18,7 @@ export default function About() {
             <div className="flex flex-col justify-center">
               <Image
                 className="w-80 mx-auto"
-                src="../public/logo.svg"
+                src={Logo}
                 alt="Your Company"
                 width={25}
                 height={25}
